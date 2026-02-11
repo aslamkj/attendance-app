@@ -64,7 +64,7 @@ def load_user(user_id):
     user = cur.fetchone()
     cur.close()
     db.close()
-    
+
     if user:
         # Pass both id and username to the User class
         return User(id=user['id'], username=user['username'])
@@ -98,7 +98,7 @@ def login():
         else:
             print("DEBUG: Login failed - mismatch")
             flash("Invalid username or password")
-            
+
     return render_template('login.html')
 
 @app.route('/')
