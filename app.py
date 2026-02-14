@@ -89,7 +89,7 @@ def login():
         db.close()
 
         # PASTE THE CODE HERE:
-        if user and check_password_hash(user['password_hash'], password):
+        if user and check_password_hash(user['password'], password):
             # Create user object with both id and username
             user_obj = User(id=user['id'], username=user['username'])
             login_user(user_obj)
@@ -234,4 +234,5 @@ def logout():
 # -----------------------
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=5000, debug=True)
